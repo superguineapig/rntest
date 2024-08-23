@@ -1,6 +1,6 @@
 # rntest
 
-This repo is a "reproducer" for an issue filed with the `react-native` repository.
+This repo is a "reproducer" for an [issue](https://github.com/facebook/react-native/issues/46196) filed with the `react-native` repository.
 
 ## Description
 
@@ -46,7 +46,3 @@ This issue appears to be related to the use of `require.resolve` in [generate-ar
 
 Node's require resolution is dependent on how the module was imported rather than the cwd of the running process. The module is imported via a ruby script invoking a node shell process.
 
-## A Possible fix
-A fix that I have tested locally is to replace `require.resolve` with the `find-up` utility (also used in other react native code) in order to traverse the directory tree upward from the specific project, allowing it to find local `node_modules` before reaching the root.
-
-See FIXME for a patched version of `generate-artifacts-executor.js` Note, the `projectRoot` path needs to be threaded through to the `findExternalLibraries` function in order to always have a deterministic search start for the current project.
