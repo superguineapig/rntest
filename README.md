@@ -1,5 +1,7 @@
 # rntest
 
+## Repo is archived for reference only ##
+
 This repo is a "reproducer" for an [issue](https://github.com/facebook/react-native/issues/46196) filed with the `react-native` repository.
 
 ## Description
